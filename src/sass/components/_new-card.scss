@@ -1,0 +1,266 @@
+.new-card {
+  height: 30vh;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  margin-bottom: 4rem;
+
+  @include flex(flex-start, flex-start);
+
+  flex-direction: row;
+
+  @include tablet {
+    height: 35vh;
+  }
+
+  @include mobile {
+    @include flex(flex-start, center);
+
+    flex-direction: column;
+    height: 45vh;
+  }
+
+  &__image {
+    height: 18rem;
+    width: 40%;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      height: 20rem;
+      width: fit-content;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      // transform: translateX(-50%);
+      transition: all 0.25s ease;
+
+      @include tablet {
+        height: fit-content;
+        width: 100%;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+  &__info {
+    width: 100%;
+    margin-left: 2rem;
+
+    //   @include tablet {
+    //     margin-left: 19rem;
+    //   }
+
+    @include mobile {
+      margin: 0;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      font-family: "M PLUS Rounded 1c", sans-serif;
+
+      &:hover {
+        color: $main-color;
+      }
+
+      @include mobile {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__discription {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      color: #747474;
+
+      @include mobile {
+        display: none;
+      }
+
+      &:hover {
+        cursor: text;
+      }
+    }
+
+    .space {
+      width: 5rem;
+      border-top: 5px solid $main-color;
+      padding-bottom: 3rem;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__box {
+      width: 20rem;
+      @include flex(center, flex-start);
+
+      flex-direction: row;
+
+      &__image {
+        height: 5rem;
+        width: 5rem;
+        margin-right: 1.5rem;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &__author {
+        font-size: 1.3rem;
+        color: $txt-second-color;
+        // padding: 2rem 3rem;
+
+        @include mobile {
+          padding: 2rem 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------------------*/
+.new-card-in-depth {
+  height: 40vh;
+  width: 100%;
+
+  @include flex(flex-start, flex-start);
+
+  flex-direction: column;
+
+  @include tablet {
+    height: 30vh;
+  }
+
+  @include mobile {
+    height: 25vh;
+  }
+
+  &__image {
+    height: 18rem;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      // transform: translateX(-50%);
+      transition: all 0.25s ease;
+
+      @include mobile {
+        height: 60%;
+      }
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
+
+    @include mobile {
+      margin-right: unset;
+      margin-top: 10rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.button-box {
+  width: 100%;
+  height: 3rem;
+
+  @include flex(flex-end, center);
+  // padding: 1rem 5rem;
+
+  .btn {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    padding: 12px 32px;
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .btn--primary {
+    color: $main-color;
+  }
+  
+  .btn--border {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  .btn--animated {
+    transition-property: color;
+    transition-duration: 0.5s;
+  
+    &.btn--border.btn--primary {
+      border: 1px solid $main-color;
+    }
+  
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $main-color;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-property: transform;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+      z-index: -1;
+    }
+  
+    &:hover {
+      color: white;
+  
+      &:before {
+        transform: scaleX(1);
+        transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+      }
+    }
+  }
+}

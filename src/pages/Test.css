@@ -1,0 +1,19 @@
+.box {
+    height: 32em;
+    width: 48rem;
+    border: 1px solid #000;
+    position: relative;
+}
+
+img {
+    height: 100%;
+}
+
+.button-add {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40%;
+    margin-top: 30%;
+}

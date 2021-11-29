@@ -1,0 +1,398 @@
+.edit {
+  @include flex(flex-start, space-between);
+
+  flex-direction: row;
+  margin-top: 4rem;
+  padding: 0 5%;
+
+  &__image {
+    width: 25%;
+
+    img {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+    }
+
+    &__button {
+      width: 100%;
+      @include flex(center, center);
+
+      flex-direction: column;
+
+      button {
+        margin-top: 1rem;
+        height: 2.5rem;
+        width: 80%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: #6b85b9;
+          color: #000;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__profile {
+    width: 70%;
+
+    @include flex(flex-start, flex-start);
+
+    flex-direction: column;
+
+    label {
+      width: 20%;
+      font-size: 1.5rem;
+    }
+
+    input {
+      height: 3rem;
+      width: 80%;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    textarea {
+      height: 8rem;
+      width: 80%;
+      padding-top: 0.5rem;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    select {
+      height: 3rem;
+      width: 40%;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    &__user,
+    &__email,
+    &__type {
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      padding-right: 2rem;
+
+      @include flex(center, flex-start);
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 100%;
+      margin-top: 4rem;
+
+      button {
+        height: 3rem;
+        width: 40%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.5rem;
+
+        &:hover {
+          background-color: #6b85b9;
+          color: #000;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.edit-category {
+  @include flex(center, center);
+
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 4rem;
+
+  &__card {
+    @include flex(center, flex-start);
+
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    border-top: 10px solid $main-color;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    & > * ~ * {
+      margin-top: 4rem;
+    }
+
+    &__title {
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    &__text {
+      @include flex(center, space-between);
+
+      width: 80%;
+
+      label {
+        width: 20%;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      input {
+        height: 3rem;
+        width: 75%;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 80%;
+
+      button {
+        height: 2.5rem;
+        width: 30%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #6b85b9;
+          color: #000;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.message {
+  @include flex(center, center);
+
+  height: 40vh;
+  width: 100%;
+  margin: 4rem 0;
+
+  &__card {
+    @include flex(center, flex-start);
+
+    flex-direction: column;
+    height: auto;
+    width: 60%;
+    border-top: 10px solid $main-color;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    & > * ~ * {
+      margin-top: 4rem;
+    }
+
+    &__title {
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    &__text {
+      @include flex(center, space-between);
+      
+      width: 80%;
+
+      label {
+        width: 20%;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      input,
+      textarea {
+        height: 3rem;
+        width: 75%;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
+
+      textarea {
+        height: 5rem;
+        padding-top: 0.5rem;
+      }
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 80%;
+      margin-bottom: 2rem;
+
+      button {
+        height: 2.5rem;
+        width: 30%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #6b85b9;
+          color: #000;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.edit-news {
+  max-width: 70%;
+  margin: 5rem 10rem;
+
+  @include tablet {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  & > * ~ * {
+    margin-top: 10px;
+  }
+
+  &__title {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &__discription {
+    font-size: 1.8rem;
+    color: $txt-second-color;
+    padding-left: 1rem;
+
+    @include tablet {
+      padding: 0;
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__author {
+    font-size: 1.2rem;
+    padding: 2rem 0;
+    color: #700808;
+
+    @include flex(center, flex-start);
+
+    flex-direction: row;
+
+    &__image {
+      height: 5rem;
+      width: 5rem;
+      margin-right: 1.5rem;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    @include mobile {
+      padding: 2rem 0;
+    }
+
+    &__user {
+      margin-left: 0.2rem;
+
+      span {
+        text-indent: 5rem;
+        &:hover {
+          cursor: pointer;
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  &__image {
+    height: 50vh;
+
+    @include tablet {
+      height: 50vh;
+    }
+
+    @include mobile {
+      height: 30vh;
+    }
+
+    img {
+      height: 95%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 3rem;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 3rem;
+    }
+
+    @include mobile {
+      padding: 0 1rem;
+      //   font-size: 1.2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__button {
+    @include flex(center, center);
+
+    flex-direction: column;
+    width: 100%;
+    height: 5rem;
+    margin-top: 5rem;
+
+    button {
+      background-color: $main-color;
+      border: none;
+      color: #fff;
+      // text-transform: uppercase;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      width: 90%;
+
+      &:hover {
+        background-color: #6b85b9;
+        color: #000;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+      }
+    }
+  }
+}
